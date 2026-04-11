@@ -1,0 +1,136 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Blockonomics",
+  "logo": {
+    "dark": "/logo/dark.png",
+    "light": "/logo/light.png"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#F7931A",
+    "light": "#FFAB40",
+    "dark": "#C97A0E"
+  },
+  "topbarLinks": [
+    {
+      "name": "Community",
+      "url": "https://community.blockonomics.co"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Dashboard",
+    "url": "https://www.blockonomics.co/dashboard"
+  },
+  "tabs": [
+    {
+      "name": "Getting Started",
+      "url": "getting-started"
+    },
+    {
+      "name": "Integrations",
+      "url": "integrations"
+    },
+    {
+      "name": "Wallets",
+      "url": "wallets"
+    },
+    {
+      "name": "Troubleshooting",
+      "url": "troubleshooting"
+    },
+    {
+      "name": "Security",
+      "url": "security"
+    },
+    {
+      "name": "Reference",
+      "url": "reference"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Start here",
+      "pages": [
+        "getting-started/overview",
+        "getting-started/quickstart",
+        "getting-started/pricing"
+      ]
+    },
+    {
+      "group": "Account setup",
+      "pages": [
+        "getting-started/create-account",
+        "getting-started/add-wallet",
+        "getting-started/add-store",
+        "getting-started/faq"
+      ]
+    },
+    {
+      "group": "Platforms",
+      "pages": [
+        "integrations/wordpress-woocommerce",
+        "integrations/whmcs",
+        "integrations/prestashop",
+        "integrations/telegram-bot",
+        "integrations/payment-widget"
+      ]
+    },
+    {
+      "group": "API",
+      "pages": [
+        "integrations/api-overview",
+        "integrations/api-authentication",
+        "integrations/api-webhooks"
+      ]
+    },
+    {
+      "group": "Wallet guides",
+      "pages": [
+        "wallets/overview",
+        "wallets/xpub-explained",
+        "wallets/ledger",
+        "wallets/electrum"
+      ]
+    },
+    {
+      "group": "Common issues",
+      "pages": [
+        "troubleshooting/index",
+        "troubleshooting/error-codes",
+        "troubleshooting/gap-limit",
+        "troubleshooting/callbacks-failing",
+        "troubleshooting/missing-funds",
+        "troubleshooting/address-generation"
+      ]
+    },
+    {
+      "group": "Account security",
+      "pages": [
+        "security/account-security",
+        "security/two-factor-auth",
+        "security/crypto-security"
+      ]
+    },
+    {
+      "group": "Compliance",
+      "pages": [
+        "security/why-trust-blockonomics",
+        "security/transaction-policy"
+      ]
+    },
+    {
+      "group": "Resources",
+      "pages": [
+        "reference/blockchain-explorer",
+        "reference/checkout-customisation",
+        "reference/bitcoin-taxes",
+        "reference/bug-bounty",
+        "reference/community"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/blockonomics_co",
+    "github": "https://github.com/blockonomics"
+  }
+}

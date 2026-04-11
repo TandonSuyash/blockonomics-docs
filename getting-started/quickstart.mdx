@@ -1,0 +1,102 @@
+---
+title: "Quickstart"
+description: "Accept your first Bitcoin payment in under 10 minutes."
+---
+
+This guide walks you through the minimum steps to go from a new Blockonomics account to a live, working payment setup.
+
+<Info>
+  Already have an account and a wallet connected? Jump straight to [Add a store](/getting-started/add-store) or pick your [integration platform](/integrations/wordpress-woocommerce).
+</Info>
+
+---
+
+## Step 1 — Create your account
+
+1. Go to [blockonomics.co/register](https://www.blockonomics.co/register)
+2. Sign up with **email + password** or **Google OAuth**
+3. If using email, verify your address with the 6-digit OTP sent to your inbox
+
+<Tip>
+  Check your spam folder if the OTP email doesn't arrive within a minute. You can request a resend from the verification screen.
+</Tip>
+
+---
+
+## Step 2 — Add a Bitcoin wallet
+
+You need a Bitcoin wallet that can show its **xPub key** (also called Master Public Key, yPub, or zPub). This is how Blockonomics generates unique addresses for each payment without ever accessing your funds.
+
+<Tabs>
+  <Tab title="I already have a wallet">
+    1. Go to [Dashboard → Wallets](https://www.blockonomics.co/dashboard#/wallet)
+    2. Click **+ Add a wallet** → select **BTC Wallet**
+    3. Enter a name and paste your **xPub key**
+    4. Paste a **sample receiving address** from the same wallet to verify they match
+    5. Click **Create Wallet**
+
+    Not sure how to find your xPub? [See the xPub guide →](/wallets/xpub-explained)
+  </Tab>
+  <Tab title="I need a wallet">
+    We recommend **Electrum** for desktop users — it's free, open-source, and makes the xPub key easy to find.
+
+    [Electrum wallet guide →](/wallets/electrum)
+
+    Once you have Electrum set up, come back and follow the "I already have a wallet" steps above.
+  </Tab>
+</Tabs>
+
+---
+
+## Step 3 — Create a store
+
+A "store" in Blockonomics links your wallet to a specific website or integration. Each store has its own callback URL — this is how Blockonomics tells your website when a payment is confirmed.
+
+1. Go to [Dashboard → Stores](https://www.blockonomics.co/dashboard#/store)
+2. Click **Add a Store**
+3. Enter a **store name** (anything memorable)
+4. Paste your **Callback URL** (you get this from your plugin settings or your own endpoint)
+5. Click **Create Store**
+6. Inside the store, toggle on **Bitcoin** and select your wallet from the dropdown
+7. Click **Update Store**
+
+---
+
+## Step 4 — Connect your platform
+
+Now pick where you want to accept payments:
+
+<CardGroup cols={2}>
+  <Card title="WordPress / WooCommerce" icon="wordpress" href="/integrations/wordpress-woocommerce">
+    Install our free plugin and connect in 2 minutes with Automatic Setup.
+  </Card>
+  <Card title="WHMCS" icon="server" href="/integrations/whmcs">
+    Add Bitcoin as a payment gateway for your hosting clients.
+  </Card>
+  <Card title="PrestaShop" icon="store" href="/integrations/prestashop">
+    Native BTC checkout for PrestaShop stores.
+  </Card>
+  <Card title="REST API" icon="code" href="/integrations/api-overview">
+    Build a custom payment flow using our REST API.
+  </Card>
+</CardGroup>
+
+---
+
+## Step 5 — Test your setup
+
+Every integration includes a **Test Setup** button. Run it after connecting — it checks that your callback URL is reachable and that your wallet is linked correctly.
+
+You should see a green checkmark next to **BTC** when everything is working.
+
+<Check>
+  You're live. Your customers can now pay with Bitcoin directly into your wallet.
+</Check>
+
+---
+
+## Next steps
+
+- [Understand pricing and billing →](/getting-started/pricing)
+- [Customise your checkout page →](/reference/checkout-customisation)
+- [Troubleshoot common issues →](/troubleshooting/index)

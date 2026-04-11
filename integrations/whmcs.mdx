@@ -1,0 +1,85 @@
+---
+title: "WHMCS"
+description: "Add Bitcoin (BTC) and Bitcoin Cash (BCH) as payment gateways in WHMCS."
+---
+
+## Prerequisites
+
+- WHMCS installed and running
+- A [Blockonomics account](https://www.blockonomics.co/register)
+- A Bitcoin wallet with an xPub key ([wallet guide](/wallets/overview))
+
+---
+
+## BTC setup
+
+<Steps>
+  <Step title="Download the Blockonomics WHMCS module">
+    Download the latest release from the [Blockonomics GitHub](https://github.com/blockonomics/whmcs-bitcoin-plugin) and unzip it.
+  </Step>
+
+  <Step title="Upload to your WHMCS server">
+    Copy the `blockonomics` folder into your WHMCS `modules/gateways/` directory.
+  </Step>
+
+  <Step title="Activate the gateway in WHMCS">
+    1. Log into your WHMCS admin panel
+    2. Go to **Setup → Payment Gateways**
+    3. Click **All Payment Gateways** and find **Blockonomics Bitcoin**
+    4. Click **Activate**
+  </Step>
+
+  <Step title="Configure your API key">
+    1. Go to [Dashboard → Stores](https://www.blockonomics.co/dashboard#/store) in Blockonomics and copy your API key
+    2. Back in WHMCS, paste it into the **API Key** field
+    3. Click **Save Changes**
+  </Step>
+
+  <Step title="Add your wallet and create a store">
+    Follow the [wallet setup](/getting-started/add-wallet) and [store setup](/getting-started/add-store) steps if you haven't already. Use the WHMCS Callback URL shown in the gateway settings as your store's callback URL.
+  </Step>
+
+  <Step title="Test the setup">
+    Place a test order in WHMCS and select Bitcoin as the payment method to verify everything is working end-to-end.
+  </Step>
+</Steps>
+
+---
+
+## BCH setup
+
+<Steps>
+  <Step title="Install the BCH module">
+    Download the BCH module from the [Blockonomics GitHub](https://github.com/blockonomics/whmcs-bitcoin-plugin) and copy the `blockonomicsbch` folder into `modules/gateways/`.
+  </Step>
+
+  <Step title="Activate in WHMCS">
+    Go to **Setup → Payment Gateways → All Payment Gateways**, find **Blockonomics Bitcoin Cash**, and activate it.
+  </Step>
+
+  <Step title="Configure your BCH wallet">
+    Add a BCH wallet in [Dashboard → Wallets](https://www.blockonomics.co/dashboard#/wallet) using your BCH wallet address (not xPub).
+  </Step>
+
+  <Step title="Link wallet to your WHMCS store">
+    In your Blockonomics store, enable **Bitcoin Cash** and select your BCH wallet.
+  </Step>
+</Steps>
+
+---
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="How do I set mBTC as my currency?">
+    In your WHMCS Blockonomics gateway settings, find the **Currency** field and select **mBTC** from the dropdown. This displays prices in millibitcoin (1 mBTC = 0.001 BTC), which can feel more familiar for smaller amounts.
+  </Accordion>
+
+  <Accordion title="Invoices are not being marked paid — how do I fix this?">
+    Check that your WHMCS server is publicly accessible and that the callback URL in your Blockonomics store matches exactly what's shown in your gateway settings. See [Callbacks failing →](/troubleshooting/callbacks-failing) for a full debugging guide.
+  </Accordion>
+
+  <Accordion title="Can I run BTC and BCH gateways at the same time?">
+    Yes — they are separate gateway modules and can both be active simultaneously in WHMCS.
+  </Accordion>
+</AccordionGroup>

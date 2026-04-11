@@ -1,0 +1,104 @@
+---
+title: "WordPress / WooCommerce"
+description: "Accept Bitcoin (BTC) and Bitcoin Cash (BCH) payments in your WooCommerce store using the free Blockonomics plugin."
+---
+
+## Prerequisites
+
+Before you begin, make sure you have:
+- A WordPress site with WooCommerce installed and active
+- A [Blockonomics account](https://www.blockonomics.co/register)
+- A Bitcoin wallet that exposes an xPub key ([see wallet guide](/wallets/overview))
+
+---
+
+## Installation
+
+### 1. Install the plugin
+
+1. In your WordPress dashboard, go to **Plugins → Add New Plugin**
+2. Search for **"WordPress Bitcoin Payments - Blockonomics"**
+3. Click **Install Now**, then **Activate**
+
+---
+
+## Setup
+
+Choose your setup method. Automatic is recommended for most users.
+
+<Tabs>
+  <Tab title="Automatic setup (recommended)">
+    After activating the plugin, you'll see a notification banner — click **Account Setup page**.
+
+    1. Get your API key from [Dashboard → Stores](https://www.blockonomics.co/dashboard#/store) and paste it in
+    2. Click **Continue**
+    3. Enter a store name and click **Continue**
+    4. Your store is created automatically. Click **Done**
+    5. You'll be redirected to **WooCommerce → Settings → Payments → Blockonomics**
+    6. In the Store section, click **Test Setup**
+    7. A green checkmark next to **BTC** confirms everything is working
+  </Tab>
+  <Tab title="Manual setup">
+    Use this if you've already created your store in Blockonomics or prefer full control.
+
+    **Step 1 — Configure API key**
+    1. Go to [Dashboard → Stores](https://www.blockonomics.co/dashboard#/store) and copy your API key
+    2. In WordPress, go to **WooCommerce → Settings → Payments → Blockonomics Bitcoin**
+    3. Paste the API key and click **Save changes**
+
+    **Step 2 — Add a wallet**
+    1. Go to [Dashboard → Wallets](https://www.blockonomics.co/dashboard#/wallet)
+    2. Click **+ Add a wallet** → **BTC Wallet**
+    3. Enter a name, paste your xPub key and a sample receiving address
+    4. Click **Create Wallet**
+
+    **Step 3 — Add a store**
+    1. Copy the Callback URL from **WordPress → WooCommerce → Settings → Payments → Blockonomics → Settings**
+    2. Go to [Dashboard → Stores](https://www.blockonomics.co/dashboard#/store) and click **Add a new store**
+    3. Enter a name and paste the Callback URL
+    4. Enable **Bitcoin** and select your wallet from the dropdown
+    5. Click **Add Store**
+
+    **Step 4 — Test setup**
+    1. Go to **WooCommerce → Settings → Payments → Blockonomics Bitcoin**
+    2. Click **Test Setup** in the Store section
+    3. A green checkmark next to **BTC** confirms success
+  </Tab>
+  <Tab title="BCH setup">
+    Bitcoin Cash (BCH) setup follows the same steps as BTC, but uses a BCH-compatible wallet.
+
+    1. Complete the BTC setup above
+    2. In [Dashboard → Wallets](https://www.blockonomics.co/dashboard#/wallet), add a BCH wallet (use a wallet address, not xPub)
+    3. In your Store settings, toggle on **Bitcoin Cash** and select your BCH wallet
+    4. Click **Update Store** and run **Test Setup** again
+
+    See the [WooCommerce BCH article](https://blockonomics.freshdesk.com/support/solutions/articles/33000253348) for screenshots specific to BCH.
+  </Tab>
+</Tabs>
+
+---
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="How do I customise the checkout page appearance?">
+    See the [Checkout customisation guide](/reference/checkout-customisation) for full options including editing text, colours, and translating strings.
+  </Accordion>
+
+  <Accordion title="Orders are not being marked as Paid after payment — how do I fix this?">
+    This is almost always caused by your web host blocking Blockonomics callback requests (often DDoS protection treating them as bot traffic).
+
+    See the full fix in [Callbacks failing →](/troubleshooting/callbacks-failing)
+  </Accordion>
+
+  <Accordion title="My customers use TOR or have JavaScript disabled — what should I do?">
+    Enable **No JavaScript checkout** mode:
+    1. Go to **WordPress Admin → WooCommerce → Settings → Payments → Blockonomics Bitcoin → Advanced**
+    2. Check **No JavaScript checkout page**
+    3. Save changes
+  </Accordion>
+
+  <Accordion title="Can I have multiple WooCommerce stores under one Blockonomics account?">
+    Yes. Create a separate store in your Blockonomics dashboard for each WordPress site, each with its own callback URL.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,109 @@
+---
+title: "REST API overview"
+description: "Build custom Bitcoin payment flows using the Blockonomics REST API."
+---
+
+## When to use the API
+
+Use the Blockonomics API if you are building a custom payment flow that isn't covered by our plugins — for example, a mobile app, a custom e-commerce stack, or a SaaS platform.
+
+If you're using WordPress, WHMCS, or PrestaShop, use the [plugin integrations](/integrations/wordpress-woocommerce) instead — they handle all API calls for you.
+
+---
+
+## Base URL
+
+```
+https://www.blockonomics.co/api
+```
+
+All requests use HTTPS. The API returns JSON.
+
+---
+
+## Quick reference
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `/new_address` | GET | Generate a new Bitcoin address for payment |
+| `/merchant/tx` | GET | Check the status of a transaction |
+| `/balance` | POST | Check the balance of an xPub |
+
+Full API reference: [blockonomics.co/api-documentation](https://www.blockonomics.co/api-documentation)
+
+---
+
+## Getting your API key
+
+1. Log into your [Blockonomics dashboard](https://www.blockonomics.co/dashboard)
+2. Go to **Stores** and copy the API key shown at the top
+
+<Warning>
+  Keep your API key secret. Never expose it in client-side code or public repositories.
+</Warning>
+
+---
+
+## Authentication
+
+Include your API key in the `Authorization` header on every request:
+
+```http
+Authorization: Bearer YOUR_API_KEY
+```
+
+---
+
+## Generate a payment address
+
+The core flow: when a customer is ready to pay, request a new address and display it to them.
+
+```http
+GET https://www.blockonomics.co/api/new_address
+Authorization: Bearer YOUR_API_KEY
+```
+
+**Response:**
+
+```json
+{
+  "address": "1A1zP1eP5QGefi2DMPTfTL5SLmv7Divf2N",
+  "time": 1713183121
+}
+```
+
+Display this address (and optionally a QR code) to the customer. Their payment will go directly to your wallet.
+
+---
+
+## Receive payment callbacks
+
+When a payment is made to an address you generated, Blockonomics sends a `GET` request to your store's **Callback URL** with these parameters:
+
+| Parameter | Description |
+|---|---|
+| `addr` | The Bitcoin address that received payment |
+| `status` | `0` = unconfirmed, `1` = partially confirmed, `2` = fully confirmed |
+| `value` | Amount received in satoshis |
+| `txid` | The Bitcoin transaction ID |
+
+**Example callback:**
+
+```
+GET https://yoursite.com/blockonomics-callback?addr=1A1zP1...&status=2&value=100000&txid=abc123
+```
+
+Your server should return HTTP `200` to acknowledge the callback. If it returns anything else, Blockonomics will retry.
+
+<Tip>
+  Always verify the `addr` parameter matches an address you generated, and the `value` matches the expected payment amount before marking an order as paid.
+</Tip>
+
+---
+
+## Next steps
+
+- [API authentication details →](/integrations/api-authentication)
+- [Webhook setup and debugging →](/integrations/api-webhooks)
+- [Full API reference](https://www.blockonomics.co/api-documentation)
+- [Troubleshoot callback failures →](/troubleshooting/callbacks-failing)

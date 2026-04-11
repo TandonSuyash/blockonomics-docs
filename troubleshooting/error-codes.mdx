@@ -1,0 +1,96 @@
+---
+title: "Error code guide"
+description: "All Blockonomics error codes from 1000 to 1014, with causes and fixes."
+---
+
+## Error codes
+
+<AccordionGroup>
+  <Accordion title="1000 — Captcha failed">
+    **Cause:** The request was flagged as automated.
+
+    **Fix:** Try a different browser or use incognito/private mode. If you are using a VPN, try disabling it or switching to a different server.
+  </Accordion>
+
+  <Accordion title="1001 — This requires you to add an xPub to your wallet watcher">
+    **Cause:** No wallet is linked to your Blockonomics account.
+
+    **Fix:** Go to [Dashboard → Wallets](https://www.blockonomics.co/dashboard#/wallet) and add your Bitcoin wallet using its xPub key. See the [wallet setup guide](/getting-started/add-wallet).
+  </Accordion>
+
+  <Accordion title="1002 — You have multiple xPubs in your wallet watcher">
+    **Cause:** Multiple wallets are linked and the system can't determine which one to use for this request.
+
+    **Fix:** If you're running multiple stores, make sure each store is linked to the correct wallet in [Dashboard → Stores](https://www.blockonomics.co/dashboard#/store).
+  </Accordion>
+
+  <Accordion title="1003 — Could not find a matching xPub">
+    **Cause:** The Bitcoin address doesn't match any wallet linked to your account, or the store's callback URL is misconfigured.
+
+    **Fix:** In [Dashboard → Wallets](https://www.blockonomics.co/dashboard#/wallet), verify your wallet is set up correctly. In [Dashboard → Stores](https://www.blockonomics.co/dashboard#/store), check that the callback URL matches your site exactly.
+  </Accordion>
+
+  <Accordion title="1004 — You are banned from using Blockonomics">
+    **Cause:** Your account has been suspended.
+
+    **Fix:** [Contact support](https://blockonomics.freshdesk.com/support/tickets/new) for clarification. Do not create a new account — this can make the situation worse.
+  </Accordion>
+
+  <Accordion title="1005 — Merchant account disabled due to low balance">
+    **Cause:** You have an unpaid bill and your credit balance is insufficient to cover it.
+
+    **Fix:** Go to [Dashboard → Billing](https://www.blockonomics.co/dashboard#/billing) and pay the outstanding amount by sending BTC to the address shown. Your account reactivates automatically once payment is confirmed on the Bitcoin network.
+  </Accordion>
+
+  <Accordion title="1006 — Gap limit exceeded">
+    **Cause:** Too many addresses have been generated from your xPub without any payments received, exceeding the wallet's gap limit.
+
+    **Fix:** This is often a temporary error. Wait a few minutes and try again. If it persists, see the full [Gap limit FAQ →](/troubleshooting/gap-limit).
+  </Accordion>
+
+  <Accordion title="1007 — Cannot fill gap limit for guest user">
+    **Cause:** You are using Blockonomics without a registered account, which prevents gap limit replenishment.
+
+    **Fix:** [Create a Blockonomics account](https://www.blockonomics.co/register) using a real email address.
+  </Accordion>
+
+  <Accordion title="1008 — Gap limit error: too many addresses with no payments">
+    **Cause:** A high volume of test orders or bot traffic has generated many unpaid addresses.
+
+    **Fix:** See the [Gap limit FAQ →](/troubleshooting/gap-limit) for how to recover.
+  </Accordion>
+
+  <Accordion title="1009 — Gap limit error: unavailable gap limit funds">
+    **Cause:** Your credit balance doesn't have enough funds to increase the gap limit.
+
+    **Fix:** Top up your credit balance on the [Billing page](https://www.blockonomics.co/dashboard#/billing). See the [Gap limit FAQ →](/troubleshooting/gap-limit) for more detail.
+  </Accordion>
+
+  <Accordion title="1010 — Invalid API parameter">
+    **Cause:** One of the parameters in your API request is invalid.
+
+    **Fix:** Check the full error message to identify which parameter is incorrect. Refer to the [API documentation](https://www.blockonomics.co/api-documentation) for the correct format.
+  </Accordion>
+
+  <Accordion title="1011 — Pending fee on existing account">
+    **Cause:** You have unpaid bills on a Blockonomics account, or you've created a duplicate account for the same domain.
+
+    **Fix:** Pay any pending bills on the [Billing page](https://www.blockonomics.co/dashboard#/billing). Avoid creating multiple accounts for the same website.
+  </Accordion>
+
+  <Accordion title="1012 / 1013 — Internal errors">
+    **Cause:** An internal server error on Blockonomics's side.
+
+    **Fix:** Wait a few minutes and try again. If the error persists, [contact support](https://blockonomics.freshdesk.com/support/tickets/new).
+  </Accordion>
+
+  <Accordion title="1014 — Couldn't find address in xPub">
+    **Cause:** In Test Bench, the Bitcoin address being tested doesn't belong to the store or wallet you have selected.
+
+    **Fix:** In Test Bench, make sure you've selected the correct store from the dropdown menu. The address must belong to the wallet linked to that store.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+Still can't resolve your error? [Open a support ticket](https://blockonomics.freshdesk.com/support/tickets/new) with the error code, a description of what you were doing, and any relevant screenshots.
