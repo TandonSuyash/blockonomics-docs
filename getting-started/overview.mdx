@@ -1,72 +1,95 @@
 ---
 title: "What is Blockonomics?"
-description: "Accept Bitcoin and crypto payments directly into your own wallet — no middleman, no custody risk."
+description: "Accept Bitcoin and crypto payments directly into your own wallet. No middleman. No custody risk."
 ---
 
-## The simplest way to accept Bitcoin
+Blockonomics is a non-custodial Bitcoin payment processor. When your customer pays, 
+the crypto goes straight into **your** wallet. Blockonomics never holds your funds, 
+never touches your revenue, and never asks you to trust us with your money.
 
-Blockonomics is a **non-custodial** Bitcoin payment processor. That means when your customer pays, the Bitcoin goes straight into your wallet — Blockonomics never holds your funds.
+Think of us as the bridge between your customer and your wallet. We handle the 
+technical layer, generating addresses, detecting payments, notifying your store. 
+While you stay in full control of your funds at all times.
 
-<CardGroup cols={2}>
-  <Card title="Quickstart" icon="rocket" href="/getting-started/quickstart">
-    Set up your first store and accept a payment in under 10 minutes.
-  </Card>
-  <Card title="Integrations" icon="plug" href="/integrations/wordpress-woocommerce">
-    Connect to WordPress, WHMCS, PrestaShop, or use the REST API.
-  </Card>
-  <Card title="Pricing" icon="tag" href="/getting-started/pricing">
-    10 free transactions, then a flat 1% fee. No hidden charges.
-  </Card>
-  <Card title="Wallets" icon="wallet" href="/wallets/overview">
-    Learn how xPub keys work and connect Ledger or Electrum.
-  </Card>
-</CardGroup>
+## Who is Blockonomics for?
 
----
+Whether you're a store owner who just wants a "Pay with Bitcoin" button on your 
+WordPress site, or a developer building a custom payment flow from scratch.
+Blockonomics works for both.
+
+- **Store owners** can get started in under 10 minutes using our plugins for 
+WordPress, WHMCS, or PrestaShop — no coding required.
+- **Developers** can integrate directly using our REST API for full control over 
+the payment experience.
+
+## Supported currencies
+
+| Currency | Symbol | Notes |
+|---|---|---|
+| Bitcoin | BTC | Supported across all integrations |
+| Bitcoin Cash | BCH | Supported on WordPress, WHMCS, PrestaShop |
+| Tether | USDT | Supported via API and select integrations |
 
 ## How it works
 
-Blockonomics uses your wallet's **xPub key** (Master Public Key) to generate a unique Bitcoin address for every transaction. This means:
+Blockonomics uses your wallet's **xPub key** (also called a Master Public Key) to 
+generate a unique payment address for every transaction. Here's why that matters:
 
-- Payments go **directly to your wallet** — we never touch them
-- Every customer gets a **unique address**, so payments are never mixed up
-- You receive funds **instantly**, with no withdrawal delays
+- Every customer gets a **unique address** so payments are never mixed up
+- Money goes **directly to your wallet** the moment payment is made
+- Even if Blockonomics went offline, your funds are already safe in your wallet
 
 <Info>
-  Blockonomics works with any Bitcoin wallet that exposes an xPub key — including Ledger, Electrum, and most hardware wallets. [See supported wallets →](/wallets/overview)
+Not familiar with xPub keys? Don't worry, our wallet guides explain everything 
+from scratch. You don't need to understand the technical details to get started.
 </Info>
-
----
 
 ## What you can do with Blockonomics
 
-| Feature | Description |
-|---|---|
-| **WordPress / WooCommerce** | Accept BTC at checkout with our free plugin |
-| **WHMCS** | Add Bitcoin as a payment gateway for hosting businesses |
-| **PrestaShop** | Native BTC checkout for PrestaShop stores |
-| **REST API** | Build custom payment flows with our API |
-| **Payment Widget** | Embed a Bitcoin payment button on any website |
-| **Telegram Bot** | Accept payments directly via a Telegram bot |
-| **Blockchain Explorer** | Search transactions, monitor wallets |
+<CardGroup cols={2}>
+  <Card title="WordPress / WooCommerce" icon="wordpress" href="/integrations/wordpress-woocommerce">
+    The easiest way to get started. Install our free plugin and accept Bitcoin 
+    at checkout in minutes.
+  </Card>
+  <Card title="WHMCS" icon="server" href="/integrations/whmcs">
+    Perfect for hosting businesses. Add Bitcoin as a payment gateway for your 
+    clients with no coding required.
+  </Card>
+  <Card title="PrestaShop" icon="store" href="/integrations/prestashop">
+    Native Bitcoin checkout for PrestaShop stores. Supports BTC and BCH.
+  </Card>
+  <Card title="REST API" icon="code" href="/integrations/api-overview">
+    Building something custom? Use our API to create a fully tailored payment 
+    experience for your platform.
+  </Card>
+  <Card title="Payment Widget" icon="credit-card" href="/integrations/payment-widget">
+    Add a Bitcoin payment button to any website, no plugin or backend needed.
+  </Card>
+  <Card title="Telegram Bot" icon="telegram" href="/integrations/telegram-bot">
+    Accept Bitcoin payments directly through a Telegram bot.
+  </Card>
+</CardGroup>
 
----
+## Before you dive in
 
-## Ready to start?
+There are three things every Blockonomics setup needs, regardless of which 
+integration you use:
 
 <Steps>
-  <Step title="Create an account">
-    [Sign up](https://www.blockonomics.co/register) — no KYC required.
+  <Step title="A Blockonomics account">
+    Free to create, no identity verification required. 
+    [Create your account →](/getting-started/create-account)
   </Step>
-  <Step title="Add your wallet">
-    Connect your Bitcoin wallet using its xPub key.
+  <Step title="A Bitcoin wallet">
+    You need a wallet that can show its xPub key, such as Ledger or Electrum. 
+    This is where your payments will land. 
+    [See supported wallets →](/wallets/overview)
   </Step>
-  <Step title="Create a store">
-    Add your website's callback URL to start receiving payments.
-  </Step>
-  <Step title="Install your integration">
-    Use our plugin for WordPress, WHMCS, or PrestaShop — or connect via API.
+  <Step title="A store">
+    A "store" in Blockonomics links your wallet to your website. Each store has 
+    a callback URL, this is how your site gets notified when a payment arrives. 
+    [Learn how stores work →](/getting-started/add-store)
   </Step>
 </Steps>
 
-[Start the quickstart guide →](/getting-started/quickstart)
+Ready? Start with [creating your account →](/getting-started/create-account)
