@@ -3,93 +3,56 @@ title: "What is Blockonomics?"
 description: "Accept Bitcoin and crypto payments directly into your own wallet. No middleman. No custody risk."
 ---
 
-Blockonomics is a non-custodial Bitcoin payment processor. When your customer pays, 
-the crypto goes straight into **your** wallet. Blockonomics never holds your funds, 
-never touches your revenue, and never asks you to trust us with your money.
+Blockonomics is a non-custodial Bitcoin payment processor.
 
-Think of us as the bridge between your customer and your wallet. We handle the 
-technical layer, generating addresses, detecting payments, notifying your store. 
-While you stay in full control of your funds at all times.
+When a customer pays, the crypto goes directly into your wallet and stays under your control.
 
-## Who is Blockonomics for?
+We handle the technical layer — generating addresses, detecting payments, and notifying your store.
 
-Whether you're a store owner who just wants a "Pay with Bitcoin" button on your 
-WordPress site, or a developer building a custom payment flow from scratch.
-Blockonomics works for both.
+## Get started in 2 minutes
 
-- **Store owners** can get started in under 10 minutes using our plugins for 
-WordPress, WHMCS, or PrestaShop — no coding required.
-- **Developers** can integrate directly using our REST API for full control over 
-the payment experience.
-
-## Supported currencies
-
-| Currency | Symbol | Notes |
-|---|---|---|
-| Bitcoin | BTC | Supported across all integrations |
-| Bitcoin Cash | BCH | Supported on WordPress, WHMCS, PrestaShop |
-| Tether | USDT | Supported via API and select integrations |
-
-## How it works
-
-Blockonomics uses your wallet's **xPub key** (also called a Master Public Key) to 
-generate a unique payment address for every transaction. Here's why that matters:
-
-- Payments go **directly to your wallet**, we never touch them
-- You receive funds **instantly**, with no withdrawal delays
-- Every customer gets a **unique address** so payments are never mixed up
-
-<Info>
-Not familiar with xPub keys? Don't worry, our wallet guides explain everything 
-from scratch. You don't need to understand the technical details to get started.
-</Info>
-
-## What you can do with Blockonomics
+Choose how you want to accept payments:
 
 <CardGroup cols={2}>
-  <Card title="WordPress / WooCommerce" icon="wordpress" href="/integrations/wordpress-woocommerce">
-    The easiest way to get started. Install our free plugin and accept Bitcoin 
-    at checkout in minutes.
+  <Card title="No-code setup" icon="plug" href="/integrations">
+    **Using WordPress, WHMCS, or PrestaShop?**
+    Install our plugin and you're live. No coding needed.
   </Card>
-  <Card title="WHMCS" icon="server" href="/integrations/whmcs">
-    Perfect for hosting businesses. Add Bitcoin as a payment gateway for your 
-    clients with no coding required.
-  </Card>
-  <Card title="PrestaShop" icon="store" href="/integrations/prestashop">
-    Native Bitcoin checkout for PrestaShop stores. Supports BTC and BCH.
-  </Card>
-  <Card title="REST API" icon="code" href="/integrations/api-overview">
-    Building something custom? Use our API to create a fully tailored payment 
-    experience for your platform.
-  </Card>
-  <Card title="Payment Widget" icon="credit-card" href="/integrations/payment-widget">
-    Add a Bitcoin payment button to any website, no plugin or backend needed.
-  </Card>
-  <Card title="Telegram Bot" icon="telegram" href="/integrations/telegram-bot">
-    Accept Bitcoin payments directly through a Telegram bot.
+  <Card title="API integration" icon="code" href="/integrations/api-overview">
+    **Building something custom?**
+    Full control via our REST API. Create payments, receive callbacks, and build custom flows.
   </Card>
 </CardGroup>
 
-## Before you dive in
+## How it works
 
-There are three things every Blockonomics setup needs, regardless of which 
-integration you use:
+- For **BTC and BCH**, we use your wallet's xPub key to generate a unique address per transaction, payments go directly to your wallet, every transaction generates a unique payment address.
+- For **USDT**, payments go to a single wallet address you provide
+
+<Info>
+Don’t worry if you’ve never heard of xPub, we will guide you step-by-step when you set up your wallet.
+</Info>
+
+## What you'll need
+
+Three things, and we guide you through each one:
 
 <Steps>
   <Step title="A Blockonomics account">
-    Free to create, no identity verification required. 
+    Free to create, no identity verification required.
     [Create your account →](/getting-started/create-account)
   </Step>
-  <Step title="A Bitcoin wallet">
-    You need a wallet that can show its xPub key, such as Ledger or Electrum. 
-    This is where your payments will land. 
+  <Step title="A crypto wallet">
+    For BTC and BCH, a wallet that exposes an xPub key (like Ledger or Electrum). 
+    For USDT, any wallet address works.
     [See supported wallets →](/wallets/overview)
   </Step>
   <Step title="A store">
-    A "store" in Blockonomics links your wallet to your website. Each store has 
-    a callback URL, this is how your site gets notified when a payment arrives. 
+    Links your wallet to your website so you get notified when a payment arrives.
     [Learn how stores work →](/getting-started/add-store)
   </Step>
 </Steps>
 
-Ready? Start with [creating your account →](/getting-started/create-account)
+<Card title="Create your free account →" icon="arrow-right" href="/getting-started/create-account">
+  Takes 2 minutes. No credit card, no KYC.
+</Card>
